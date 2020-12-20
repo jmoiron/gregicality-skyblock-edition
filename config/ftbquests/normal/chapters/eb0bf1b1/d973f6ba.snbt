@@ -1,11 +1,11 @@
 {
 	x: 5.0d,
-	y: 2.5d,
+	y: 3.0d,
 	text: [
 		"The Deep Dark is a dangerous place, but the ores seem to be much richer than the ones from sifting."
 	],
 	dependencies: [
-		"81237093",
+		"5aee17b6",
 		"5f884ed3"
 	],
 	tasks: [{

@@ -7,6 +7,7 @@
 		"Kinda useless when there's just you and the sky."
 	],
 	dependencies: [
+		"81237093",
 		"6372f2b0"
 	],
 	tasks: [{
