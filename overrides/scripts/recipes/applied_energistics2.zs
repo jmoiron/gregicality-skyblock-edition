@@ -515,21 +515,21 @@ function machineRecipes() {
         for crystal, seed in aeSeeds {
             val meta = seed.metadata;
             gt.autoclave.recipeBuilder()
-                .inputs([seed.withTag({progress: meta}).onlyWithTag({progress: meta})])
+                .inputs([seed..onlyWithTag({progress: meta})])
                 .fluidInputs([water * 1000])
                 .outputs([seed.withTag({progress: meta+200})])
                 .duration(duration)
                 .EUt(256)
                 .buildAndRegister();
             gt.autoclave.recipeBuilder()
-                .inputs([seed.withTag({progress: meta+200}).onlyWithTag({progress: meta+200})])
+                .inputs([seed.onlyWithTag({progress: meta+200})])
                 .fluidInputs([water * 1000])
                 .outputs([seed.withTag({progress: meta+400})])
                 .duration(duration)
                 .EUt(256)
                 .buildAndRegister();    
             gt.autoclave.recipeBuilder()
-                .inputs([seed.withTag({progress: meta+400}).onlyWithTag({progress: meta+400})])
+                .inputs([seed.onlyWithTag({progress: meta+400})])
                 .fluidInputs([water * 1000])
                 .outputs([crystal])
                 .duration(duration)
@@ -541,10 +541,10 @@ function machineRecipes() {
 
 function init() {
 	// Un-named recipes
-	craft.process(addShaped, false);
+    craft.process(addShaped, false);
     craft.process(addShapeless);
-	craft.removeRecipes(removeRecipes);
-	craft.removeFurnace(removeFurnace);
+    craft.removeRecipes(removeRecipes);
+    craft.removeFurnace(removeFurnace);
 
     machineRecipes();
 }
