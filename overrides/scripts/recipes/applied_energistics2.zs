@@ -515,7 +515,7 @@ function machineRecipes() {
         for crystal, seed in aeSeeds {
             val meta = seed.metadata;
             gt.autoclave.recipeBuilder()
-                .inputs([seed..onlyWithTag({progress: meta})])
+                .inputs([seed.onlyWithTag({progress: meta})])
                 .fluidInputs([water * 1000])
                 .outputs([seed.withTag({progress: meta+200})])
                 .duration(duration)
